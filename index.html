@@ -3,37 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Digital Brand Designer, Web Developer</title>
+    <title>Dante’s Horde | Visual Identity & Web Design</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
-        header { border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        .btn { background: #24292e; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+        :root {
+            --bg: #0f0f12;
+            --text: #e0e0e0;
+            --accent: #ff4d4d; /* High-energy Rosie Red */
+            --card-bg: #1a1a1f;
+            --input-bg: #25252b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: -2px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .accent { color: var(--accent); }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 10px;
+            color: var(--accent);
+        }
+
+        .sub-tagline {
+            max-width: 600px;
+            margin: 15px auto;
+            opacity: 0.7;
+        }
+
+        /* Service Grid */
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .card h3 { margin-top: 0; color: #fff; }
+        .price { font-weight: bold; color: var(--accent); display: block; margin-top: 15px; }
+
+        /* Contact Form */
+        .contact-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width { grid-column: span 2; }
+
+        label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: bold; }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--input-bg);
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        textarea { height: 120px; resize: vertical; }
+
+        .submit-btn {
+            grid-column: span 2;
+            background: var(--accent);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .submit-btn:hover { opacity: 0.9; transform: scale(1.01); }
+
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            opacity: 0.4;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            form { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            .submit-btn { grid-column: span 1; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Dante Hamilton</h1>
-        <p>A short, punchy description of what this repository does.</p>
-        <a href="https://github.com/YOUR_USER/YOUR_REPO" class="btn">View on GitHub</a>
-    </header>
-    
- section class="grid">
-    <div class="card">
-        <h3>Digital Identity</h3>
-        <p>Custom character art and profile assets designed for Twitch, YouTube, and BlueSky. I build the visual soul of your creator brand.</p>
-        <small>Starting at $150</small>
+
+    <div class="container">
+        <header>
+            <h1>DANTE’S <span class="accent">HORDE</span></h1>
+            <p class="tagline">Visual Identity Designer & Web Developer</p>
+            <p class="sub-tagline">
+                6 years of illustration expertise combined with professional web infrastructure. 
+                I build digital identities for creators and local brands.
+            </p>
+        </header>
+
+        <h2 class="section-title">Services</h2>
+        <section class="grid">
+            <div class="card">
+                <h3>Digital Identity</h3>
+                <p>Character icons, social banners, and profile assets optimized for creator platforms.</p>
+                <span class="price">Starting at $150</span>
+            </div>
+            <div class="card">
+                <h3>Commercial Web</h3>
+                <p>High-performance, design-led landing pages built for conversions and brand trust.</p>
+                <span class="price">Starting at $500</span>
+            </div>
+            <div class="card">
+                <h3>Full Strategy</h3>
+                <p>Complete visual branding from logo design to a fully integrated digital storefront.</p>
+                <span class="price">Custom Quote</span>
+            </div>
+        </section>
+
+        <h2 class="section-title">Project Inquiry</h2>
+        <section class="contact-section">
+            <form action="ACTION_URL_HERE" method="POST">
+                <div>
+                    <label>Name</label>
+                    <input type="text" name="name" required placeholder="Your name">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="email@example.com">
+                </div>
+                <div>
+                    <label>Project Type</label>
+                    <select name="project_type">
+                        <option value="Character/Illustration">Character / Illustration</option>
+                        <option value="Web Design">Web Design</option>
+                        <option value="Full Branding">Full Branding Identity</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Estimated Budget</label>
+                    <select name="budget">
+                        <option value="$150-$500">$150 - $500</option>
+                        <option value="$500-$1000">$500 - $1,000</option>
+                        <option value="$1000+">$1,000+</option>
+                    </select>
+                </div>
+                <div class="full-width">
+                    <label>Project Goals</label>
+                    <textarea name="goals" placeholder="What are you trying to achieve with this project?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </section>
+
+        <footer>
+            &copy; 2026 Dante’s Horde Studio. Hand-made art, high-performance tech.
+        </footer>
     </div>
-    <div class="card">
-        <h3>Commercial Web</h3>
-        <p>Fast, responsive, and design-led websites. I handle the tech so you can focus on your business.</p>
-        <small>Starting at $500</small>
-    </div>
-    <div class="card">
-        <h3>Brand Strategy</h3>
-        <p>Full-scale visual systems including logos, typography, and site integration for local businesses.</p>
-        <small>Custom Quote Only</small>
-    </div>
-</section>
-    </main>
+
 </body>
 </html>
